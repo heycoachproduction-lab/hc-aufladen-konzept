@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Hey Coach — Werbespot „AUFLADEN“ (Energie-Level-Konzept)</title>
+<title>Hey Coach — Werbespot „AUFLADEN“ (Energie-Level-Konzept · v2)</title>
 <style>
 :root{
   --bg:#f6f4ef; --surface:#ffffff; --navy:#16223d; --navy2:#27324c;
@@ -31,6 +31,7 @@ header.hero h1 small{display:block;font-size:1.05rem;letter-spacing:.04em;color:
 header.hero p.sub{color:#cfc7b4;max-width:660px;margin:.6rem 0 0;font-size:1.02rem}
 .meta{margin-top:18px;font-size:.82rem;color:#a9a191;display:flex;gap:18px;flex-wrap:wrap}
 .meta b{color:#e7dcc0;font-weight:600}
+.vtag{display:inline-block;margin-top:14px;background:rgba(189,150,54,.16);border:1px solid rgba(189,150,54,.5);color:#e7dcc0;font-size:.74rem;font-weight:700;letter-spacing:.06em;padding:5px 12px;border-radius:999px}
 
 nav.jump{position:sticky;top:0;z-index:20;background:rgba(246,244,239,.93);
   backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--border)}
@@ -75,6 +76,14 @@ p.lead{color:var(--muted);max-width:700px;margin:.3rem 0 0}
 .bacard h4 span{font-size:.72rem;font-weight:700;color:var(--muted)}
 .bacard.full h4 span{color:var(--gold)}
 
+/* concept note cards */
+.notegrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.note{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow);border-left:4px solid var(--gold)}
+.note h4{margin:.1rem 0 .4rem;color:var(--navy);font-size:1rem;display:flex;align-items:center;gap:8px}
+.note p{margin:.2rem 0 0;font-size:.9rem;color:var(--muted);line-height:1.55}
+.note.teleport{border-left-color:var(--c-fokus)}
+.note.hudpos{border-left-color:var(--c-energie)}
+
 /* script scenes */
 .scene{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);margin-top:16px}
 .scene-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:14px}
@@ -91,6 +100,18 @@ p.lead{color:var(--muted);max-width:700px;margin:.3rem 0 0}
 .hud-box{align-self:start}
 .hud-box .hl{font-size:.64rem;font-weight:800;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:8px;display:block}
 .hud-box.win{background:#fffaf0;border:1px solid var(--gold);border-radius:12px;padding:14px}
+
+/* beats — shot-by-shot */
+.beats{counter-reset:b;list-style:none;padding:0;margin:.4rem 0 .2rem}
+.beats li{counter-increment:b;position:relative;padding:5px 0 5px 30px;font-size:.86rem;line-height:1.5;color:var(--ink);border-bottom:1px dashed var(--border)}
+.beats li:last-child{border-bottom:none}
+.beats li::before{content:counter(b);position:absolute;left:0;top:5px;width:20px;height:20px;border-radius:6px;background:var(--gold-soft);color:#7a5f17;font-weight:800;font-size:.72rem;display:grid;place-items:center}
+.beats-h{font-weight:800;font-size:.66rem;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin:.7rem 0 .1rem}
+
+/* transition pill between scenes */
+.transition{display:flex;justify-content:center;margin:14px 0 0}
+.transition span{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#f1e9d4;font-size:.78rem;font-weight:700;letter-spacing:.05em;padding:7px 16px;border-radius:999px;box-shadow:var(--shadow)}
+.transition span b{color:var(--gold);font-weight:800}
 
 /* generic boxes/tables */
 .box{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow);margin-top:14px}
@@ -111,11 +132,19 @@ table.tbl tbody tr:nth-child(even){background:#fcfbf7}
 .steps li{counter-increment:s;position:relative;padding:10px 0 10px 44px;border-bottom:1px solid var(--border)}
 .steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:28px;height:28px;border-radius:8px;background:var(--navy);color:#fff;font-weight:700;font-size:.85rem;display:grid;place-items:center}
 .steps li:last-child{border-bottom:none}
+
+/* reference photo / online folder box */
+.linkbox{background:#fff;border:1px dashed var(--gold);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow);margin-top:14px}
+.linkbox h4{margin:.1rem 0 .4rem;color:var(--navy);font-size:1.05rem}
+.linkbox .ph{display:inline-block;margin-top:8px;background:var(--gold-soft);color:#7a5f17;font-weight:700;padding:8px 14px;border-radius:8px;font-size:.9rem;border:1px dashed var(--gold)}
+.linkbox ul{margin:.6rem 0 0;padding-left:18px;font-size:.88rem;color:var(--muted)}
+.linkbox ul li{margin:.2rem 0}
+
 footer{padding:34px 0 60px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--border);margin-top:20px}
 
 @media(max-width:720px){
   header.hero h1{font-size:2rem}
-  .scene-grid,.grid2,.beforeafter,.cut{grid-template-columns:1fr}
+  .scene-grid,.grid2,.beforeafter,.cut,.notegrid{grid-template-columns:1fr}
   .legend{grid-template-columns:1fr 1fr}
   .stat{grid-template-columns:80px 1fr 40px}
 }
@@ -128,18 +157,21 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:.82rem;border-top:1px so
   <h1 class="serif">AUFLADEN<small>Dein Leben auf 100 %. — Das Energie-Level-Konzept</small></h1>
   <p class="sub">Один концепт. Выгоревший офисный работник с пустыми «полосками энергии», как у игрового персонажа, заряжает себя тренировками у настоящих чемпионов — и возвращается за стол на 100 %.</p>
   <div class="meta">
-    <span><b>Дата:</b> 22.06.2026</span>
+    <span><b>Дата:</b> 25.06.2026</span>
     <span><b>Формат:</b> ~90 сек (1,5 мин) · 16:9 (не Reels)</span>
     <span><b>Продакшн:</b> GPT Image 2 + Seedance (Higgsfield) + motion-HUD</span>
     <span><b>Рынок:</b> DACH · Deutsch (Duzen)</span>
   </div>
+  <span class="vtag">v2 · детальный shot-план: телепорты + гонг-переходы + покадровые beats</span>
 </div></header>
 
 <nav class="jump"><div class="wrap">
   <a href="#logline">★ Логлайн</a>
   <a href="#mechanik">Механика полосок</a>
+  <a href="#prinzip">Телепорт + HUD</a>
   <a href="#script">Сценарий</a>
   <a href="#cast">Тренеры</a>
+  <a href="#fotos">Референс-фото</a>
   <a href="#look">Лук &amp; AI</a>
   <a href="#cutdowns">Нарезки</a>
   <a href="#compliance">Юрид.</a>
@@ -152,7 +184,7 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:.82rem;border-top:1px so
   <h2 class="sec">Логлайн &amp; концепт</h2>
   <div class="logline-wrap">
     <div class="logline-big">У тебя пустые полоски энергии — <span class="g">как у игрового персонажа. Hey Coach заряжает их до 100 %.</span></div>
-    <p class="logline-sub">Сгорбленный офисный работник без сил. Над ним — игровой HUD: шкалы Energie, Kraft, Technik, Ausdauer, Fokus почти на нуле. Он находит Hey Coach, тренируется у настоящих чемпионов — и с каждой сессией полоски растут, пока он не возвращается за стол с прямой спиной и жизнью на 100 %. <em>EN: A burnt-out office worker recharges his RPG-style stat bars with real champions — until he's back at his desk at full energy.</em></p>
+    <p class="logline-sub">Сгорбленный офисный работник без сил, вокруг — хаос: недоеденная еда, горы бумаг. На телефон «прилетает» Hey Coach, вокруг него вспыхивают карточки тренеров — он выбирает и <b>телепортируется</b> в мир тренировки. Каждый раунд — свой тренер и своя прокачка; между мирами звучит <b>гонг</b> и снова телепорт. В финале он возвращается за тот же, но уже чистый стол — с прямой спиной и жизнью на 100 %. <em>EN: A burnt-out office worker gets «teleported» into training worlds by real champions, recharges his RPG-style stat bars round by round — and returns to a clean desk at full energy.</em></p>
     <span class="logline-de">„Bist du bereit, dein Leben zu verändern?“ · Hey Coach. Dein Team.</span>
     <div class="titles">
       <span>Рабочее имя: <b>AUFLADEN</b></span>
@@ -170,7 +202,7 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:.82rem;border-top:1px so
   <p class="lead">5 характеристик героя, как у игрового персонажа. Каждый тренер «прокачивает» свою шкалу — зритель видит прогресс буквально, кадр за кадром. Это и хук, и нативный показ всех продуктов сразу.</p>
   <div class="legend">
     <div class="lc" style="border-top-color:var(--c-energie)"><h5>⚡ ENERGIE</h5><p>Общий «заряд». Пустой в офисе → полный в финале. Заполняется восстановлением.</p></div>
-    <div class="lc" style="border-top-color:var(--c-kraft)"><h5>💪 KRAFT</h5><p>Сила. Кикбоксинг + Athletik: Nils, Heiko, Jana.</p></div>
+    <div class="lc" style="border-top-color:var(--c-kraft)"><h5>💪 KRAFT</h5><p>Сила. Кикбоксинг: Nils, Heiko, Jana.</p></div>
     <div class="lc" style="border-top-color:var(--c-technik)"><h5>🥊 TECHNIK</h5><p>Техника. Muay Thai в Таиланде: Marlon.</p></div>
     <div class="lc" style="border-top-color:var(--c-ausdauer)"><h5>🏃 AUSDAUER</h5><p>Выносливость. Fight-Prep: Valentin Knau (Glory).</p></div>
     <div class="lc" style="border-top-color:var(--c-fokus)"><h5>🧘 FOKUS</h5><p>Концентрация / ментальность. Восстановление + медитация: Elsa.</p></div>
@@ -181,11 +213,28 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:.82rem;border-top:1px so
   </div>
 </div></section>
 
+<!-- PRINZIP: TELEPORT + HUD -->
+<section id="prinzip"><div class="wrap">
+  <div class="sec-eyebrow">Два главных приёма монтажа</div>
+  <h2 class="sec">Телепорт-переходы + где живёт HUD</h2>
+  <p class="lead">Это связывает весь ролик в одну игру. Запоминается, легко делается на AI, и решает практическую проблему: полоски нельзя «прилепить» прямо над головой героя.</p>
+  <div class="notegrid">
+    <div class="note teleport">
+      <h4>⚡ Карточка → телепорт · 🔔 гонг → следующий мир</h4>
+      <p><b>Вход в первый мир:</b> герой выбирает карточку на телефоне → вспышка тёплого света → он уже в зале. <b>Между мирами:</b> звучит <b>гонг</b> (конец раунда), герой оглядывается налево-направо — и оказывается в новом месте (зал → Таиланд → к Валентину → домой → офис). Это фирменный переход бренда: <em>каждая тренировка = новый «уровень», в который он телепортируется.</em></p>
+    </div>
+    <div class="note hudpos">
+      <h4>📊 HUD — в нижнем углу, НЕ над головой</h4>
+      <p>На AI-видео полоску над головой героя ровно держать нельзя. Поэтому <b>HUD живёт в фиксированном нижнем углу кадра (низ-слева)</b>, как игровой интерфейс / health-bar в игре. Он стабильно держится в одном месте всю сцену, а заполнение шкалы — сигнатурная анимация бренда. <em>EN: stat bars sit fixed in the lower-left corner, like a game HUD — never floating over the actor's head.</em></p>
+    </div>
+  </div>
+</div></section>
+
 <!-- SCRIPT -->
 <section id="script"><div class="wrap">
-  <div class="sec-eyebrow">Полный сценарий · RU + EN</div>
+  <div class="sec-eyebrow">Полный сценарий · RU + EN · покадрово</div>
   <h2 class="sec">Сценарий по кадрам (≈90 сек · 16:9)</h2>
-  <p class="lead">Кадр горизонтальный (16:9): HUD живёт сбоку, в правой трети, как игровой интерфейс — а не поверх лица. Справа в каждой сцене — состояние полосок после неё. Экранный текст идёт на немецком (перевод в скобках).</p>
+  <p class="lead">Кадр горизонтальный (16:9). HUD — в нижнем-левом углу, как игровой интерфейс. Справа в каждой сцене — состояние полосок после неё. Внутри каждой сцены — <b>beats</b> (покадровая раскадровка). Экранный текст идёт на немецком (перевод в скобках).</p>
 
   <!-- S1 -->
   <div class="scene">
@@ -193,53 +242,86 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:.82rem;border-top:1px so
       <div class="scene-title">DAS BÜRO / DER NULLPUNKT<small>Офис / точка ноль</small></div></div>
     <div class="scene-grid">
       <div class="txt">
-        <p class="ru"><span class="lbl">Визуал</span>Опен-спейс, холодный серо-синий свет. Мужчина ~35–40, сгорбленный над клавиатурой, плечи опущены, потухший взгляд, печатает на автопилоте. Над ним — игровой HUD: шкалы почти пусты, обесцвечены, мерцают. Полоска <b>ENERGIE</b> слабо пульсирует, как разряженная батарея.</p>
-        <p class="en"><span class="lbl">Visual</span>Open-plan office, cold grey-blue light. A man, ~35–40, hunched over his keyboard, shoulders collapsed, dead eyes, typing on autopilot. A game-style HUD floats above him — bars nearly empty, desaturated, flickering. The ENERGIE bar pulses weakly, like a low battery.</p>
+        <p class="ru"><span class="lbl">Визуал</span>Опен-спейс, холодный серо-синий свет. Мужчина ~35–40, <b>сгорбленный</b> над клавиатурой, плечи опущены, потухший взгляд, печатает на автопилоте. Вокруг — <b>хаос: коробки недоеденной еды, стаканы кофе, горы бумаг</b>, бардак на столе. В нижнем-левом углу — игровой HUD: шкалы почти пусты, обесцвечены, мерцают. <b>ENERGIE</b> слабо пульсирует, как разряженная батарея.</p>
+        <p class="en"><span class="lbl">Visual</span>Open-plan office, cold grey-blue light. A man, ~35–40, <b>hunched</b> over his keyboard, shoulders collapsed, dead eyes, typing on autopilot. Around him — <b>chaos: half-eaten takeaway boxes, coffee cups, piles of paper</b>. Lower-left corner: a game-style HUD — bars nearly empty, desaturated, flickering. ENERGIE pulses weakly, like a low battery.</p>
+        <div class="beats-h">Beats</div>
+        <ol class="beats">
+          <li>Широкий план: захламлённый стол, бардак, мёртвый свет офиса.</li>
+          <li>Наезд на сгорбленного героя — пустой взгляд, автопилот.</li>
+          <li>В нижнем-левом углу мерцает почти пустой HUD (ENERGIE 8 %).</li>
+        </ol>
         <p class="ru"><span class="lbl">Звук</span>Гул офиса, жужжание ламп, медленный «садящийся» тон, как разряд батареи.</p>
-        <div class="onscreen"><b>На экране (game-UI):</b> „ENERGIE: 8 %“ · „LEVEL 1“</div>
+        <div class="onscreen"><b>На экране (game-UI, низ-слева):</b> „ENERGIE: 8 %“ · „LEVEL 1“</div>
       </div>
       <div class="hud-box"><span class="hl">Status nach Szene</span><div class="hud dim" data-levels="8,12,5,10,8"></div></div>
     </div>
   </div>
 
+  <div class="transition"><span>🔔 <b>—</b> &nbsp;конец «мёртвой» сцены &nbsp; → &nbsp; вечер, дом</span></div>
+
   <!-- S2 -->
   <div class="scene">
     <div class="scene-head"><span class="tc">0:10–0:20</span>
-      <div class="scene-title">DER FUND / HEY COACH<small>Находка / Hey Coach «попадает» к нему</small></div></div>
+      <div class="scene-title">DER FUND / HEY COACH<small>Находка · телефон вибрирует · карточки → телепорт</small></div></div>
     <div class="scene-grid">
       <div class="txt">
-        <p class="ru"><span class="lbl">Визуал</span>Дом, вечер, развалился на диване, листает телефон. Появляется Hey Coach — естественно, как и должно «попасть» к нему: короткий ролик автоплеем, тренер смотрит прямо на него, иконка приложения. Палец останавливается. Потухшие шкалы вдруг <b>зажигаются</b> — контуры загораются, возвращается цвет, будто персонажа только что «выбрали». Появляется ряд настоящих тренеров для свайпа.</p>
-        <p class="en"><span class="lbl">Visual</span>Home, evening, slumped on the couch, scrolling. Hey Coach reaches him naturally — a short clip auto-plays, a coach looking right at him, the app icon. His thumb stops. The dead HUD bars suddenly <b>ignite</b> — outlines light up, colour returns, like the character just got "selected." A row of real coaches to swipe.</p>
-        <p class="ru"><span class="lbl">Звук</span>«Садящийся» тон обрывается. Чистый аккорд «power-on», мягкое UI-мерцание.</p>
-        <div class="onscreen"><b>На экране:</b> „Spieler aktiviert“ (игрок активирован) · карточки тренеров</div>
+        <p class="ru"><span class="lbl">Визуал</span>Вечер, он приходит домой и <b>ставит пакет с продуктами на стол</b> (первый маленький знак: решил взяться за себя). Крупный план: телефон на столе <b>вибрирует</b> → на экране распускается <b>логотип Hey Coach</b>. Приложение открывается — и вокруг героя <b>в воздухе вспыхивают светящиеся карточки</b> (Kickboxen / Muay Thai / Fight-Prep / Regeneration). Он тянется, <b>выбирает карточку</b> → тёплая вспышка света — <b>телепорт</b>.</p>
+        <p class="en"><span class="lbl">Visual</span>Evening, he comes home and <b>sets a bag of groceries on the table</b> (first small sign he wants to change). Close-up: his phone on the table <b>vibrates</b> → the <b>Hey Coach logo</b> blooms on screen. The app opens — and <b>glowing cards materialise in the air around him</b> (Kickboxen / Muay Thai / Fight-Prep / Regeneration). He reaches, <b>picks a card</b> → a warm flash of light — <b>teleport</b>.</p>
+        <div class="beats-h">Beats</div>
+        <ol class="beats">
+          <li>Ставит продукты на стол — короткий, тёплый бытовой кадр.</li>
+          <li>Крупный план: телефон вибрирует, на экране — логотип Hey Coach.</li>
+          <li>Вокруг него в воздухе вспыхивают карточки тренеров.</li>
+          <li>Палец выбирает карточку Kickboxen → вспышка → телепорт.</li>
+        </ol>
+        <p class="ru"><span class="lbl">Звук</span>«Садящийся» тон обрывается. Чистый аккорд «power-on», мягкое UI-мерцание, вуш телепорта.</p>
+        <div class="onscreen"><b>На экране:</b> логотип Hey Coach · „Spieler aktiviert“ (игрок активирован) · карточки тренеров</div>
       </div>
       <div class="hud-box"><span class="hl">Status nach Szene</span><div class="hud" data-levels="12,14,6,12,12"></div></div>
     </div>
   </div>
 
+  <div class="transition"><span>⚡ <b>KARTE GEWÄHLT</b> &nbsp;→&nbsp; TELEPORT в первый мир / зал</span></div>
+
   <!-- S3 -->
   <div class="scene">
     <div class="scene-head"><span class="tc">0:20–0:35</span>
-      <div class="scene-title">KICKBOXEN → KRAFT<small>Nils · Heiko · Jana</small></div></div>
+      <div class="scene-title">KICKBOXEN → KRAFT<small>Nils → Heiko → Jana · по очереди (15 сек)</small></div></div>
     <div class="scene-grid">
       <div class="txt">
-        <p class="ru"><span class="lbl">Визуал</span>Свайп → выбирает Kickboxen. Влетает тёплый зал. Работает с <b>Нильсом</b> (Europameister) на лапах — чёткая двойка-тройка; <b>Хайко</b> правит работу ног; <b>Яна</b> (Weltmeisterin) бьёт острую комбинацию, он повторяет. С каждым чистым ударом полоска <b>KRAFT рвётся вверх</b>, выскакивают «+XP», ENERGIE и AUSDAUER тоже подрастают.</p>
-        <p class="en"><span class="lbl">Visual</span>Swipe → he taps Kickboxen. A warm gym slams in. Pads with <b>Nils</b> (Europameister) — crisp 1-2-3; <b>Heiko</b> fixing his footwork; <b>Jana</b> (Weltmeisterin) firing a combo he mirrors. Each clean strike, the <b>KRAFT bar surges</b>, "+XP" pops, ENERGIE &amp; AUSDAUER tick up.</p>
+        <p class="ru"><span class="lbl">Визуал</span>Телепорт высаживает его в тёплый зал. Сразу — <b>бренд-ревил: на стене / в нижней трети появляется heycoachproduction.de</b>, видно, как это выглядит. Тренеры выходят <b>по очереди</b> (всего 15 сек — никакой толпы): <b>Нильс первый</b> — короткий <b>поклон друг другу</b> (как в кикбоксинге), затем лапы, чёткая двойка; <b>Хайко</b> правит стойку/работу ног; <b>Яна</b> бьёт острую комбинацию — он повторяет. Загораются мини-элементы, <b>загораются глаза героя</b> — он оживает. С каждым чистым ударом <b>KRAFT рвётся вверх</b>, выскакивают «+XP».</p>
+        <p class="en"><span class="lbl">Visual</span>The teleport drops him into a warm gym. <b>Brand reveal: heycoachproduction.de appears on the wall / lower-third.</b> Coaches step in <b>one by one</b> (only 15s — no crowd): <b>Nils first</b> — a quick <b>bow to each other</b> (kickboxing respect), then pads, a crisp 1-2; <b>Heiko</b> fixes his stance/footwork; <b>Jana</b> fires a sharp combo he mirrors. Mini-elements light up, <b>his eyes light up</b> — he comes alive. Each clean strike, the <b>KRAFT bar surges</b>, „+XP“ pops.</p>
+        <div class="beats-h">Beats</div>
+        <ol class="beats">
+          <li>Телепорт → зал; ревил <b>heycoachproduction.de</b>.</li>
+          <li><b>Нильс:</b> поклон друг другу → лапы, чистая двойка. KRAFT +.</li>
+          <li><b>Хайко:</b> быстрая правка стойки/ног.</li>
+          <li><b>Яна:</b> острая комбинация, герой повторяет. Загораются глаза.</li>
+        </ol>
         <p class="ru"><span class="lbl">Звук</span>Хлопки лап как перкуссия, приятные «level-up» пинги на каждом приросте шкалы.</p>
-        <div class="onscreen"><b>На экране:</b> „KRAFT +“ · „Kickboxen — mit Nils, Heiko &amp; Jana“</div>
+        <div class="onscreen"><b>На экране:</b> <b>heycoachproduction.de</b> · „KRAFT +“ · „Kickboxen — mit Nils, Heiko &amp; Jana“</div>
       </div>
       <div class="hud-box"><span class="hl">Status nach Szene</span><div class="hud" data-levels="30,55,15,32,16"></div></div>
     </div>
   </div>
 
+  <div class="transition"><span>🔔 <b>GONG</b> (Runde aus) &nbsp;→&nbsp; герой оглядывается &nbsp;→&nbsp; TELEPORT</span></div>
+
   <!-- S4 -->
   <div class="scene">
     <div class="scene-head"><span class="tc">0:35–0:50</span>
-      <div class="scene-title">MUAY THAI / THAILAND → TECHNIK<small>Marlon Tröscher</small></div></div>
+      <div class="scene-title">MUAY THAI / THAILAND → TECHNIK<small>Marlon Tröscher · у воды</small></div></div>
     <div class="scene-grid">
       <div class="txt">
-        <p class="ru"><span class="lbl">Визуал</span>Свайп → Muay Thai. Зал растворяется в <b>тайском пляже на рассвете</b> — песок, дымка, боевые шорты. <b>Марлон Трёшер</b> (главный тренер, основатель T1 — мастер-наставник) отрабатывает колени, локти, клинч, ставит стойку. Полоска <b>TECHNIK резко растёт</b>, с ней KRAFT и ENERGIE.</p>
-        <p class="en"><span class="lbl">Visual</span>Swipe → Muay Thai. The gym dissolves into a <b>Thai beach at dawn</b> — sand, mist, fight shorts. <b>Marlon Tröscher</b> (Head Coach, T1 founder — the master coach) drills knees, elbows, the clinch, resets his posture. The <b>TECHNIK bar climbs hard</b>, KRAFT &amp; ENERGIE rise with it.</p>
+        <p class="ru"><span class="lbl">Визуал</span>Звучит <b>гонг</b> — герой <b>оглядывается налево-направо</b>: он уже в другом месте. Это <b>Таиланд, у воды</b> (пляж/лагуна, пальмы, тёплый рассвет) — однозначно читается Таиланд. Рядом — <b>Марлон в тайских шортах</b>, герой тоже уже в тайских шортах. Они оттачивают <b>удары коленями и локтями</b>, делают <b>пресс/кор</b>, затем снова шлифуют локти, колени, элементы клинча. Полоска <b>TECHNIK резко растёт</b>, с ней KRAFT и ENERGIE.</p>
+        <p class="en"><span class="lbl">Visual</span>A <b>gong</b> sounds — he <b>looks left and right</b>: he's somewhere new. It's <b>Thailand, by the water</b> (beach/lagoon, palms, warm dawn) — unmistakably Thai. Beside him — <b>Marlon in Muay Thai shorts</b>, the hero now in Thai shorts too. They drill <b>knee and elbow strikes</b>, do <b>core/abs work</b>, then hone elbows, knees, clinch elements. The <b>TECHNIK bar climbs hard</b>, KRAFT &amp; ENERGIE rise with it.</p>
+        <div class="beats-h">Beats</div>
+        <ol class="beats">
+          <li>Гонг → герой оглядывается → ревил Таиланда (вода, пальмы, рассвет).</li>
+          <li>Марлон рядом, оба в тайских шортах.</li>
+          <li>Колени, локти + короткий пресс/кор.</li>
+          <li>Клинч-элементы; TECHNIK резко вверх.</li>
+        </ol>
         <p class="ru"><span class="lbl">Звук</span>Прибой, ветер, тяжёлые удары колен; «skill unlocked» чайм.</p>
         <div class="onscreen"><b>На экране:</b> „TECHNIK +“ · „Muay Thai — mit Marlon“ &nbsp;<span class="warn">(никогда «Weltmeister»)</span></div>
       </div>
@@ -247,29 +329,45 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:.82rem;border-top:1px so
     </div>
   </div>
 
+  <div class="transition"><span>⚡ <b>TELEPORT</b> &nbsp;→&nbsp; к Валентину (Fight-Prep)</span></div>
+
   <!-- S5 -->
   <div class="scene">
     <div class="scene-head"><span class="tc">0:50–1:03</span>
       <div class="scene-title">FIGHT-PREP → AUSDAUER<small>Valentin Knau · GLORY-Fighter</small></div></div>
     <div class="scene-grid">
       <div class="txt">
-        <p class="ru"><span class="lbl">Визуал</span>Свайп → Fight-Prep. Предрассветная лесная дорога в Шварцвальде. <b>Валентин Кнау</b> — собственный Glory-боец Hey Coach — тащит его через жёсткие интервалы в 6 утра, на полшага впереди, голос в наушнике. Спринты, дыхание паром. Полоска <b>AUSDAUER заливается вверх</b>, ENERGIE и KRAFT уже у потолка.</p>
-        <p class="en"><span class="lbl">Visual</span>Swipe → Fight-Prep. Pre-dawn Schwarzwald forest road. <b>Valentin Knau</b> — Hey Coach's own Glory fighter — pulls him through brutal 6am intervals, half a step ahead, in his ear. Sprints, breath like smoke. The <b>AUSDAUER bar floods up</b>, ENERGIE &amp; KRAFT near the top.</p>
-        <p class="ru"><span class="lbl">Звук</span>Шаги по гравию в темпе, сердцебиение, гонящий пульс; whoosh заполнения шкалы.</p>
+        <p class="ru"><span class="lbl">Визуал</span>Телепорт → к <b>Валентину Кнау</b> (собственный Glory-боец Hey Coach). Сначала — <b>специальный скоростной байк</b> (air/assault-bike): герой разгоняет каденс, ускоряется, потом <b>взрывной спринт</b>. Кульминация — фирменный приём Валентина: <b>колено в прыжке</b> (Sprungknie / flying knee), его «коронка»; герой пробует за ним. Полоска <b>AUSDAUER заливается вверх</b>, ENERGIE и KRAFT уже у потолка.</p>
+        <p class="en"><span class="lbl">Visual</span>Teleport → to <b>Valentin Knau</b> (Hey Coach's own Glory fighter). First a <b>special speed bike</b> (air/assault bike): he drives the cadence up, accelerates, then an explosive <b>sprint</b>. The climax — Valentin's signature: the <b>flying knee</b> (Sprungknie), his trademark; the hero tries it after him. The <b>AUSDAUER bar floods up</b>, ENERGIE &amp; KRAFT near the top.</p>
+        <div class="beats-h">Beats</div>
+        <ol class="beats">
+          <li><b>Скоростной байк</b> — каденс растёт, ускорение.</li>
+          <li><b>Спринт</b> — взрывное усилие, дыхание паром.</li>
+          <li><b>Колено в прыжке</b> Валентина (фирменный приём) → герой повторяет.</li>
+        </ol>
+        <p class="ru"><span class="lbl">Звук</span>Нарастающий вой байка, сердцебиение, гонящий пульс; whoosh заполнения шкалы.</p>
         <div class="onscreen"><b>На экране:</b> „AUSDAUER +“ · „Fight-Prep — mit Valentin Knau, GLORY-Fighter“</div>
       </div>
       <div class="hud-box"><span class="hl">Status nach Szene</span><div class="hud" data-levels="65,80,70,85,35"></div></div>
     </div>
   </div>
 
+  <div class="transition"><span>🔔 <b>GONG</b> &nbsp;→&nbsp; TELEPORT домой (вечер)</span></div>
+
   <!-- S6 -->
   <div class="scene">
     <div class="scene-head"><span class="tc">1:03–1:18</span>
-      <div class="scene-title">REGENERATION + MEDITATION → FOKUS<small>Elsa · die Nacht</small></div></div>
+      <div class="scene-title">REGENERATION + MEDITATION → FOKUS<small>Elsa · вечер в квартире</small></div></div>
     <div class="scene-grid">
       <div class="txt">
-        <p class="ru"><span class="lbl">Визуал</span>Свайп → Regeneration. Ночь. Спокойная тёплая комната. <b>Эльза</b> (физиотерапевт) ведёт восстановление и короткую медитацию — дыхание, мобильность, закрытые глаза, усталость дня оседает. Полоска <b>FOKUS поднимается почти до полной</b>, и <b>ENERGIE наконец заполняется</b> — именно восстановление превращает работу в настоящую энергию. HUD мягко светится.</p>
-        <p class="en"><span class="lbl">Visual</span>Swipe → Regeneration. Night. A calm, warm room. <b>Elsa</b> (Physiotherapeutin) guides recovery and a short meditation — breath, mobility, eyes closed, the day's effort settling. The <b>FOKUS bar rises to near-full</b> and the <b>ENERGIE bar finally fills</b> — recovery is what turns the work into real energy. The HUD glows softly.</p>
+        <p class="ru"><span class="lbl">Визуал</span>Гонг → герой <b>в своей квартире</b>, вечер. Он <b>медитирует с Эльзой</b> — они <b>сидят напротив друг друга</b>, тёплый спокойный свет. Дыхание, успокоение, восстановление — лёгкие элементы мобильности/восстановления или просто медитация; усталость дня оседает. Полоска <b>FOKUS поднимается почти до полной</b>, и <b>ENERGIE наконец заполняется</b> — именно восстановление превращает работу в настоящую энергию. HUD мягко светится.</p>
+        <p class="en"><span class="lbl">Visual</span>Gong → he's <b>in his apartment</b>, evening. He <b>meditates with Elsa</b> — they <b>sit facing each other</b>, warm calm light. Breath, calming, recovery — light mobility/recovery elements or pure meditation; the day's effort settles. The <b>FOKUS bar rises to near-full</b> and <b>ENERGIE finally fills</b> — recovery is what turns the work into real energy. The HUD glows softly.</p>
+        <div class="beats-h">Beats</div>
+        <ol class="beats">
+          <li>Телепорт домой → тёплая спокойная комната, вечер.</li>
+          <li>Эльза напротив, оба сидят, глаза закрыты — медитация/дыхание.</li>
+          <li>HUD оседает и мягко светится; ENERGIE доходит до 95 %.</li>
+        </ol>
         <p class="ru"><span class="lbl">Звук</span>Всё оголяется: дыхание, один тёплый пад, мягкий «regen»-гул; нежный чайм, когда ENERGIE доходит до полной.</p>
         <div class="onscreen"><b>На экране:</b> „FOKUS +“ · „ENERGIE: 95 %“ · „Regeneration — mit Elsa“</div>
       </div>
@@ -277,14 +375,22 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:.82rem;border-top:1px so
     </div>
   </div>
 
+  <div class="transition"><span>⚡ <b>TELEPORT</b> &nbsp;→&nbsp; утро, тот же офис — но другой</span></div>
+
   <!-- S7 -->
   <div class="scene">
     <div class="scene-head"><span class="tc">1:18–1:30</span>
-      <div class="scene-title">DAS BÜRO, NEU / 100 %<small>Офис заново · LEVEL UP</small></div></div>
+      <div class="scene-title">DAS BÜRO, NEU / 100 %<small>Офис заново · чисто · LEVEL UP</small></div></div>
     <div class="scene-grid">
       <div class="txt">
-        <p class="ru"><span class="lbl">Визуал</span>Тот же офис, тот же стол — но теперь он сидит <b>прямо, спина ровная, ясный взгляд, в моменте</b>. Над ним HUD <b>полный и светится золотом — все шкалы на 100 %, LEVEL UP</b>. Он отрывается от экрана, прямо в камеру — спокойный, заряженный, готовый. Склейка в чёрный на вдохе.</p>
-        <p class="en"><span class="lbl">Visual</span>Same office, same desk — but now he sits <b>tall, straight back, clear eyes, present</b>. The HUD above him is <b>full and glowing gold — all bars at 100 %, LEVEL UP</b>. He looks up, straight to camera — calm, charged, ready. Cut to black on a breath.</p>
+        <p class="ru"><span class="lbl">Визуал</span>Тот же офис, тот же стол — но теперь <b>всё чисто</b>: нет коробок еды, нет гор бумаг, порядок. Он сидит <b>прямо, спина ровная, в тонусе, ясный взгляд</b>, в моменте. В нижнем-левом углу — тот же HUD, но <b>светлее и ярче: все шкалы на 100 %, золото, LEVEL UP</b>. Он отрывается от экрана, прямо в камеру — спокойный, заряженный, готовый. Склейка в чёрный на вдохе.</p>
+        <p class="en"><span class="lbl">Visual</span>Same office, same desk — but now <b>everything is clean</b>: no food boxes, no paper piles, tidy. He sits <b>tall, straight back, toned, clear eyes</b>, present. Lower-left — the same HUD, but <b>lighter and brighter: all bars at 100 %, gold, LEVEL UP</b>. He looks up, straight to camera — calm, charged, ready. Cut to black on a breath.</p>
+        <div class="beats-h">Beats</div>
+        <ol class="beats">
+          <li>Тот же кадр офиса — но чистый стол, порядок, тёплый свет.</li>
+          <li>Герой сидит прямо, в тонусе; HUD низ-слева — все 100 %, золото.</li>
+          <li>Взгляд прямо в камеру → склейка в чёрный → лого + тег.</li>
+        </ol>
         <p class="ru"><span class="lbl">Звук</span>Полный тёплый «level-complete» аккорд; затем три удара костяшками по лапе (звуковой логотип) на появлении логотипа.</p>
         <div class="onscreen"><b>На экране (game/chat):</b> „LEVEL UP — 100 %“ → <b>„Bist du bereit, dein Leben zu verändern?“</b> → <b>„Hey Coach. Dein Team.“</b> + лого</div>
       </div>
@@ -311,6 +417,24 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:.82rem;border-top:1px so
   </table>
 </div></section>
 
+<!-- FOTOS / REFERENZ-ORDNER -->
+<section id="fotos"><div class="wrap">
+  <div class="sec-eyebrow">Референс-фото для AI</div>
+  <h2 class="sec">Онлайн-папка с фото команды</h2>
+  <p class="lead">Чистые фото лиц нужны, чтобы AI (GPT Image 2 + Soul) сохранил настоящие лица команды — это наше УТП «настоящие чемпионы».</p>
+  <div class="linkbox">
+    <h4>📁 Referenz-Fotos (Online-Ordner)</h4>
+    <p style="margin:.2rem 0 0;color:var(--muted);font-size:.92rem">Marlon · Nils · Jana · Heiko · Elsa &nbsp;+&nbsp; Valentin Knau (Glory) — отдельно.</p>
+    <!-- ВСТАВИТЬ ССЫЛКУ ЗДЕСЬ: замени href="#" и текст на реальный линк папки (Google Drive / Dropbox) -->
+    <a class="ph" href="#" rel="noopener" target="_blank">🔗 [ Online-Ordner-Link hier einfügen ]</a>
+    <ul>
+      <li>Что нужно с человека: 1 чёткий фронтальный портрет + 1–2 ракурса 3/4 + по возможности фото в полный рост / экшн в форме.</li>
+      <li>Высокое разрешение, резко, без сильных фильтров, ровный свет.</li>
+      <li><b>Valentin Knau</b> — фото добавляются отдельно (нужно подтверждение права использования образа, Glory).</li>
+    </ul>
+  </div>
+</div></section>
+
 <!-- LOOK / AI -->
 <section id="look"><div class="wrap">
   <div class="sec-eyebrow">Лук &amp; продакшн</div>
@@ -318,11 +442,11 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:.82rem;border-top:1px so
   <div class="grid2">
     <div class="box">
       <h4>🎨 Лук</h4>
-      <p>Кадр — <b>16:9, кинематографичный</b> (не вертикаль/Reels): широкие композиции, HUD сидит сбоку справа, как игровой интерфейс. Контраст «офис vs жизнь»: офис — холодный серо-синий, мёртвый; миры тренировок — тёплые (зал, тайский рассвет, золото Шварцвальда, тёплая ночь у Эльзы). Финальный офис — тот же кадр, но теплее и живее. <b>HUD</b> — чистый премиальный motion-graphics, не мультяшный: тонкие шкалы, благородное золото на 100 %, мягкое свечение. Сигнатурная анимация бренда = <b>заполнение полоски</b>.</p>
+      <p>Кадр — <b>16:9, кинематографичный</b> (не вертикаль/Reels): широкие композиции, <b>HUD сидит в нижнем-левом углу</b>, как игровой интерфейс (а не над головой). Контраст «офис vs жизнь»: офис в начале — холодный серо-синий, мёртвый, захламлённый; миры тренировок — тёплые (зал, тайский рассвет у воды, к Валентину, тёплая ночь у Эльзы). Финальный офис — тот же кадр, но <b>чистый, теплее и живее</b>. <b>HUD</b> — чистый премиальный motion-graphics, не мультяшный: тонкие шкалы, благородное золото на 100 %, мягкое свечение. Сигнатурная анимация бренда = <b>заполнение полоски</b> + <b>телепорт-вспышка</b> между мирами.</p>
     </div>
     <div class="box">
       <h4>🤖 AI-продакшн (GPT Image 2 + Seedance)</h4>
-      <p>Пайплайн: <b>GPT Image 2</b> — генерим ки-фреймы (миры: офис, пляж, лес, комната восстановления + персонажи) → <b>Seedance</b> («CDance») — оживляем кадры в видео (image-to-video). Лица тренеров — <b>реальные</b>: по чистым референс-фото каждого (Marlon, Nils, Jana, Elsa, Valentin), чтобы сохранить УТП «настоящие чемпионы». HUD/полоски — накладываем motion-графикой поверх. Держим фотореализм + тепло, чтобы НЕ выглядело «как AI». <span class="warn">Только своя команда (с согласия) — узнаваемых сторонних бойцов UFC/Glory, кроме нашего Валентина, не показываем.</span></p>
+      <p>Пайплайн: <b>GPT Image 2</b> — генерим ки-фреймы (миры: захламлённый офис, кухня/дом, зал, Таиланд у воды, тренировка с Валентином, комната у Эльзы, чистый офис + персонажи) → <b>Seedance</b> — оживляем кадры в видео (image-to-video). Лица тренеров — <b>реальные</b>: по чистым референс-фото каждого (Marlon, Nils, Jana, Heiko, Elsa, Valentin), чтобы сохранить УТП «настоящие чемпионы». HUD/полоски и телепорт-вспышки — накладываем motion-графикой поверх. Держим фотореализм + тепло, чтобы НЕ выглядело «как AI». <span class="warn">Только своя команда (с согласия) — узнаваемых сторонних бойцов UFC/Glory, кроме нашего Валентина, не показываем.</span></p>
     </div>
   </div>
 </div></section>
@@ -333,8 +457,8 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:.82rem;border-top:1px so
   <h2 class="sec">Длительности (всё 16:9)</h2>
   <div class="cut">
     <div class="cc"><h5>≈90 сек — основной</h5><p>Полная история. 16:9 для YouTube, сайта, презентаций, показа на экране. Это главный ролик.</p></div>
-    <div class="cc"><h5>30 сек — платный кат</h5><p>Офис (8 %) → Hey Coach → быстрый монтаж тренировок (KRAFT/TECHNIK/AUSDAUER растут) → ночь с Эльзой (ENERGIE 100 %) → офис 100 % → тег. 16:9 (+ 1:1 для лент).</p></div>
-    <div class="cc"><h5>15 сек — хук</h5><p>Офис, шкалы пусты → 3 быстрых «удара» заполнения полосок → офис 100 % → „Bist du bereit, dein Leben zu verändern?“</p></div>
+    <div class="cc"><h5>30 сек — платный кат</h5><p>Офис (8 %) → телефон/Hey Coach → быстрый монтаж тренировок (KRAFT/TECHNIK/AUSDAUER растут) → ночь с Эльзой (ENERGIE 100 %) → чистый офис 100 % → тег. 16:9 (+ 1:1 для лент).</p></div>
+    <div class="cc"><h5>15 сек — хук</h5><p>Офис, шкалы пусты → 3 быстрых телепорта/«удара» заполнения полосок → офис 100 % → „Bist du bereit, dein Leben zu verändern?“</p></div>
   </div>
 </div></section>
 
@@ -345,11 +469,11 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:.82rem;border-top:1px so
   <table class="tbl">
     <thead><tr><th>Риск</th><th>Статус</th></tr></thead>
     <tbody>
-      <tr><td>Мед. обещания (§20 SGB V)</td><td>Полоски — это <b>игровая метафора</b> (стилизованный HUD), а не медицинское обещание. Лейблы — Energie/Kraft/Technik/Ausdauer/Fokus (производительность, не лечение). Без «heilt / abnehmen / Schmerzen weg». Сцена Эльзы = восстановление/релакс, не терапия.</td></tr>
+      <tr><td>Мед. обещания (§20 SGB V)</td><td>Полоски — это <b>игровая метафора</b> (стилизованный HUD), а не медицинское обещание. Лейблы — Energie/Kraft/Technik/Ausdauer/Fokus (производительность, не лечение). Без «heilt / abnehmen / Schmerzen weg». Сцена Эльзы = восстановление/релакс/медитация, не терапия.</td></tr>
       <tr><td>Титул Марлона</td><td>Только Trainer / Head Coach / Gründer T1. <b>Никогда «Weltmeister».</b> Jana — Weltmeisterin (правда), Nils — Europameister.</td></tr>
       <tr><td>Самооборона / overpromise</td><td>Нет уличных конфликтов, нет «защити себя». Только тренировка и личная энергия.</td></tr>
       <tr><td>Fake-срочность</td><td>Нет. Призыв внутренний: „Bist du bereit, dein Leben zu verändern?“</td></tr>
-      <tr><td>Права на изображение (§22 KUG)</td><td>Все в кадре — своя команда (Soul с согласия). Без узнаваемых сторонних бойцов. Найденный «ролик» в S2 — только наш контент.</td></tr>
+      <tr><td>Права на изображение (§22 KUG)</td><td>Все в кадре — своя команда (Soul с согласия). Без узнаваемых сторонних бойцов. Логотип/контент в S2 — только наш.</td></tr>
       <tr><td>Язык / тон</td><td>Экранный текст — немецкий, Duzen. Тон сдержанный, без американского хайпа.</td></tr>
     </tbody>
   </table>
@@ -360,19 +484,19 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:.82rem;border-top:1px so
   <div class="sec-eyebrow">Next</div>
   <h2 class="sec">Что собрать дальше</h2>
   <ol class="steps">
-    <li><b>Промпты под GPT Image 2</b> — по кадрам: ки-фреймы миров (офис/пляж/лес/комната) + персонаж с реальными лицами тренеров (по референсам) + дизайн HUD.</li>
-    <li><b>Промпты под Seedance (CDance)</b> — image-to-video для каждого ки-фрейма: движение камеры, действие, длительность; + сигнатурная анимация заполнения полоски.</li>
-    <li><b>Тестовый ки-фрейм</b> — сгенерить 1–2 кадра в GPT Image 2 (сгорбленный офис с пустым HUD / финал 100 % золотом), чтобы увидеть лук вживую.</li>
-    <li><b>Референс-фото тренеров</b> — собрать чистые фото Marlon/Nils/Jana/Elsa/Valentin для реальных лиц в GPT Image 2.</li>
+    <li><b>Залить фото в онлайн-папку</b> и вставить ссылку в раздел «Референс-фото» выше (Marlon/Nils/Jana/Heiko/Elsa уже собраны локально; Valentin — добавить).</li>
+    <li><b>Промпты под GPT Image 2</b> — по кадрам: ки-фреймы миров (хаос-офис / дом / зал / Таиланд у воды / Валентин / комната Эльзы / чистый офис) + персонаж с реальными лицами тренеров + дизайн HUD в нижнем-левом углу.</li>
+    <li><b>Промпты под Seedance</b> — image-to-video для каждого ки-фрейма: движение камеры, действие, длительность; + сигнатурные анимации (заполнение полоски, телепорт-вспышка, гонг-переход).</li>
+    <li><b>Тестовый ки-фрейм</b> — сгенерить 1–2 кадра в GPT Image 2 (захламлённый офис с пустым HUD низ-слева / финал 100 % золотом), чтобы увидеть лук вживую.</li>
     <li><b>Немецкий VO/текстовый лист</b> — все экранные надписи и реплики (Duzen), финальная вычитка.</li>
   </ol>
   <div class="box" style="border-left:4px solid var(--c-ausdauer)">
-    <p><b>✅ Решено:</b> продакшн = <b>реальные лица через GPT Image 2 + Seedance</b>. Нужно от тебя: чистые референс-фото каждого тренера + подтверждение права использования образа Валентина (Glory).</p>
+    <p><b>✅ Решено:</b> продакшн = <b>реальные лица через GPT Image 2 + Seedance</b>; HUD — в нижнем-левом углу; переходы между мирами — <b>гонг + телепорт</b>. Нужно от тебя: залить референс-фото в онлайн-папку + подтверждение права использования образа Валентина (Glory).</p>
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  Hey Coach Production GmbH · внутренний документ (не для публикации на heycoachproduction.de) · концепт „AUFLADEN“ · 22.06.2026.
+  Hey Coach Production GmbH · внутренний документ (не для публикации на heycoachproduction.de) · концепт „AUFLADEN“ · v2 · 25.06.2026.
   Все персонажи — собственная команда Hey Coach. Полоски энергии — стилизованная игровая метафора, не медицинское утверждение.
 </div></footer>
 
